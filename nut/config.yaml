@@ -1,10 +1,10 @@
 ---
-name: Network UPS Tools
+name: Network UPS Tools (Ubuntu)
 version: dev
-slug: nut
+slug: nut-ubuntu
 description: Manage battery backup (UPS) devices
-url: https://github.com/hassio-addons/addon-nut
-codenotary: codenotary@frenck.dev
+url: https://github.com/NonsenseBB/addon-nut-ubuntu
+codenotary: codenotary@nonsensebb.com
 startup: system
 arch:
   - aarch64
