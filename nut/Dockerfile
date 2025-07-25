@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.8.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/ubuntu-base:stable
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -7,10 +7,10 @@ FROM ${BUILD_FROM}
 RUN \
     apt-get update \
     && apt-get install -y --no-install-recommends\
-        nut=2.8.0-7 \
-        nut-snmp=2.8.0-7 \
-        nut-xml=2.8.0-7 \
-        usbutils=1:014-1+deb12u1 \
+        nut \
+        nut-snmp \
+        nut-xml \
+        usbutils \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -33,13 +33,13 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Dale Higgs <dale3h@addons.community>" \
+    maintainer="Luis Nabais <addons@nonsensebb.com>" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
-    org.opencontainers.image.authors="Dale Higgs <dale3h@addons.community>" \
+    org.opencontainers.image.authors="Luis Nabais <addons@nonsensebb.com>" \
     org.opencontainers.image.licenses="MIT" \
-    org.opencontainers.image.url="https://addons.community" \
+    org.opencontainers.image.url="https://github.com/NonsenseBB/addon-nut-ubuntu" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
